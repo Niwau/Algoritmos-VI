@@ -2,32 +2,29 @@
 
 int main(){
 
-    int primeiroNumero;
     int numeroAtual;
     int maiorNumero;
     int menorNumero;
 
     for(int i = 1; i <= 5; i++){
+
+        printf("Escolha um numero: ");
+        scanf("%d", &numeroAtual);
+
         if(i == 1){
-            printf("Insira o primeiro numero: ");
-            scanf("%d", &primeiroNumero);
+            maiorNumero = numeroAtual;
+            menorNumero = numeroAtual;
 
-        } else {
-            printf("Insira outro numero: ");
-            scanf("%d", &numeroAtual);
+        } else if(numeroAtual > maiorNumero){
+            maiorNumero = numeroAtual;
 
-            if(numeroAtual > primeiroNumero){
-                maiorNumero = numeroAtual;
-                menorNumero = primeiroNumero;
+        } else if(numeroAtual < menorNumero){
+            menorNumero = numeroAtual;
 
-            } else {
-                maiorNumero = primeiroNumero;
-                menorNumero = numeroAtual;
-            }
         }
 
     }
 
-    printf("Maior numero: %d\n", maiorNumero );
-    printf("Menor numero: %d\n", menorNumero );
+    printf("Maior e menor valor: %d %d", maiorNumero, menorNumero);
+
 }
